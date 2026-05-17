@@ -1,12 +1,11 @@
 {
-    "name": "node-red-project",
-    "description": "A Node-RED Project",
+    "name": "node-red-7",
+    "description": "Node-RED instance 7",
     "version": "0.0.1",
     "dependencies": {},
     "node-red": {
         "settings": {
-            "flowFile": "flows.json",
-            "credentialSecret": ""
+            "flowFile": "flows.json"
         }
     }
 }
