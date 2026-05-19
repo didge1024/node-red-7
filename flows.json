@@ -127,7 +127,8 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload.object",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 470,
@@ -179,6 +180,33 @@
             [
                 "0104821899e65712"
             ]
+        ]
+    },
+    {
+        "id": "116287f00a4510f7",
+        "type": "inject",
+        "z": "33e31080ef834a10",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 60,
+        "wires": [
+            []
         ]
     }
 ]
