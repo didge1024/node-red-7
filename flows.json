@@ -81,6 +81,11 @@
         "sessionExpiry": ""
     },
     {
+        "id": "e064ea110dfc74eb",
+        "type": "chirpstack-server",
+        "server": "10.8.0.1:8080"
+    },
+    {
         "id": "7af204d73750409e",
         "type": "telegram sender",
         "z": "33e31080ef834a10",
@@ -334,5 +339,22 @@
         "x": 740,
         "y": 800,
         "wires": []
+    },
+    {
+        "id": "6a50ae293baebc43",
+        "type": "chirpstack-enqueue",
+        "z": "33e31080ef834a10",
+        "name": "Relay Port",
+        "server": "e064ea110dfc74eb",
+        "devEui": "48e663fffe30085a",
+        "applicationId": "",
+        "fPort": "",
+        "confirmed": true,
+        "debug": false,
+        "x": 530,
+        "y": 360,
+        "wires": [
+            []
+        ]
     }
 ]

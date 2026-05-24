@@ -7,5 +7,11 @@
     "9d156d3c3c4f5a59": {
         "token": "8995332802:AAEIDjg0dTUChahJkpAUqAEyscvlpa8xmoM"
     },
-    "ef740ef658ba4140": {}
+    "ef740ef658ba4140": {
+        "userid": "iotsjistem@gmail.com",
+        "password": "oanffacgwddywfvi"
+    },
+    "e064ea110dfc74eb": {
+        "apiToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjaGlycHN0YWNrIiwiaXNzIjoiY2hpcnBzdGFjayIsInN1YiI6ImI3MTM0NjRmLWNkOTctNDFjNC05NjI5LTU1ZjMwNDY0ODQ2YiIsInR5cCI6ImtleSJ9.PkzM8p2MuRkuA1N67KO-Mm4UCyHnf6Vn9PSdxo-jhXg"
+    }
 }
