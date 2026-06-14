@@ -1,0 +1,321 @@
+[
+  {
+    "id": "33e31080ef834a10",
+    "type": "tab",
+    "label": "7: Flow1",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "43d1740e38cc6310",
+    "type": "tls-config",
+    "name": "mqtt.lora.eagelcovewc.com",
+    "cert": "",
+    "key": "",
+    "ca": "",
+    "certname": "mqtt_client.pem",
+    "keyname": "mqtt_client.key",
+    "caname": "ca.pem",
+    "servername": "mqtt.lora.eagelcovewc.com",
+    "verifyservercert": true,
+    "alpnprotocol": ""
+  },
+  {
+    "id": "9d156d3c3c4f5a59",
+    "type": "telegram bot",
+    "botname": "SJI IOT BOT",
+    "usernames": "",
+    "chatids": "",
+    "baseapiurl": "",
+    "testenvironment": false,
+    "updatemode": "polling",
+    "pollinterval": 300,
+    "usesocks": false,
+    "sockshost": "",
+    "socksprotocol": "socks5",
+    "socksport": 6667,
+    "socksusername": "anonymous",
+    "sockspassword": "",
+    "bothost": "",
+    "botpath": "",
+    "localbothost": "0.0.0.0",
+    "localbotport": 8443,
+    "publicbotport": 8443,
+    "privatekey": "",
+    "certificate": "",
+    "useselfsignedcertificate": false,
+    "sslterminated": false,
+    "verboselogging": false
+  },
+  {
+    "id": "b79a80b523e80429",
+    "type": "mqtt-broker",
+    "name": "mqtt.lora.ecwc.com",
+    "broker": "mqtt.lora.eaglecovewc.com",
+    "port": "8883",
+    "tls": "43d1740e38cc6310",
+    "clientid": "",
+    "autoConnect": true,
+    "usetls": true,
+    "protocolVersion": 4,
+    "keepalive": 60,
+    "cleansession": true,
+    "autoUnsubscribe": true,
+    "birthTopic": "",
+    "birthQos": "0",
+    "birthRetain": "false",
+    "birthPayload": "",
+    "birthMsg": {},
+    "closeTopic": "",
+    "closeQos": "0",
+    "closeRetain": "false",
+    "closePayload": "",
+    "closeMsg": {},
+    "willTopic": "",
+    "willQos": "0",
+    "willRetain": "false",
+    "willPayload": "",
+    "willMsg": {},
+    "userProps": "",
+    "sessionExpiry": ""
+  },
+  {
+    "id": "7af204d73750409e",
+    "type": "telegram sender",
+    "z": "33e31080ef834a10",
+    "name": "Humidity Sender",
+    "bot": "9d156d3c3c4f5a59",
+    "haserroroutput": true,
+    "outputs": 2,
+    "x": 740,
+    "y": 700,
+    "wires": [
+      [],
+      []
+    ]
+  },
+  {
+    "id": "0104821899e65712",
+    "type": "debug",
+    "z": "33e31080ef834a10",
+    "name": "debug 1",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload.object",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 470,
+    "y": 220,
+    "wires": []
+  },
+  {
+    "id": "85e0df9c3c269955",
+    "type": "inject",
+    "z": "33e31080ef834a10",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 220,
+    "y": 220,
+    "wires": [
+      [
+        "0104821899e65712"
+      ]
+    ]
+  },
+  {
+    "id": "5fe3e8e9fec24f49",
+    "type": "comment",
+    "z": "33e31080ef834a10",
+    "name": "Group 7 LoRaWAN Info",
+    "info": "## Group 7 - LoRaWAN Device Info\n\n**Application ID:** `4240e563-c576-499b-b6e9-89b95e3c4236`\n**MQTT Topic:** `application/4240e563-c576-499b-b6e9-89b95e3c4236/device/+/event/up`\n**Telegram Chat ID:** `-5176341473`\n**All-groups Chat ID:** `-5144508977`\n\n_(Garson/infrastructure group - no student devices)_\n---\n**Telegram for Windows:** [Download](https://telegram.org/dl/desktop/win)\n\n**AgroSense Sensor Manual:** [PDF](https://github.com/Makerfabs/Agrosense-Decoder/blob/main/Agrosense_Air_Temperature_Humidity_Sensor/AgroSense_Air%20Temperature%20and%20Humidity%20Sensor%20LoRaWAN%C2%AE%20Manual%20V1.2.pdf)\n\n**Telegram Web App:** [Open](https://web.telegram.org/k/)\n**Node-RED Telegram Docs:** [flows.nodered.org](https://flows.nodered.org/node/node-red-contrib-telegrambot)\n",
+    "x": 400,
+    "y": 60,
+    "wires": []
+  },
+  {
+    "id": "4f3d0b441b2d47d3",
+    "type": "mqtt in",
+    "z": "33e31080ef834a10",
+    "name": "Group 1",
+    "topic": "application/53ee255f-1620-4450-9f51-eba79ca3e920/device/+/event/up",
+    "qos": "0",
+    "datatype": "auto-detect",
+    "broker": "b79a80b523e80429",
+    "nl": false,
+    "rap": true,
+    "rh": 0,
+    "inputs": 0,
+    "x": 200,
+    "y": 420,
+    "wires": [
+      [
+        "074cf9429fcc4f18"
+      ]
+    ]
+  },
+  {
+    "id": "d0aa3081ff6d467f",
+    "type": "mqtt in",
+    "z": "33e31080ef834a10",
+    "name": "Group 2",
+    "topic": "application/8ab36a13-8fba-49b3-8207-6fc4b1bb86fa/device/+/event/up",
+    "qos": "0",
+    "datatype": "auto-detect",
+    "broker": "b79a80b523e80429",
+    "nl": false,
+    "rap": true,
+    "rh": 0,
+    "inputs": 0,
+    "x": 200,
+    "y": 500,
+    "wires": [
+      [
+        "074cf9429fcc4f18"
+      ]
+    ]
+  },
+  {
+    "id": "c421d5bda4b043a5",
+    "type": "mqtt in",
+    "z": "33e31080ef834a10",
+    "name": "Group 3",
+    "topic": "application/f35a8798-d184-4995-a658-f9c4938d073d/device/+/event/up",
+    "qos": "0",
+    "datatype": "auto-detect",
+    "broker": "b79a80b523e80429",
+    "nl": false,
+    "rap": true,
+    "rh": 0,
+    "inputs": 0,
+    "x": 200,
+    "y": 580,
+    "wires": [
+      [
+        "074cf9429fcc4f18"
+      ]
+    ]
+  },
+  {
+    "id": "313a1037be624d7c",
+    "type": "mqtt in",
+    "z": "33e31080ef834a10",
+    "name": "Group 4",
+    "topic": "application/944ee854-89d0-4b0b-9524-f3559ef9df52/device/+/event/up",
+    "qos": "0",
+    "datatype": "auto-detect",
+    "broker": "b79a80b523e80429",
+    "nl": false,
+    "rap": true,
+    "rh": 0,
+    "inputs": 0,
+    "x": 200,
+    "y": 660,
+    "wires": [
+      [
+        "074cf9429fcc4f18"
+      ]
+    ]
+  },
+  {
+    "id": "e89fa83acf744960",
+    "type": "mqtt in",
+    "z": "33e31080ef834a10",
+    "name": "Group 5",
+    "topic": "application/158daf48-5c45-4c73-88ee-75358c8f5323/device/+/event/up",
+    "qos": "0",
+    "datatype": "auto-detect",
+    "broker": "b79a80b523e80429",
+    "nl": false,
+    "rap": true,
+    "rh": 0,
+    "inputs": 0,
+    "x": 200,
+    "y": 740,
+    "wires": [
+      [
+        "074cf9429fcc4f18"
+      ]
+    ]
+  },
+  {
+    "id": "7d4825ad11fb415e",
+    "type": "mqtt in",
+    "z": "33e31080ef834a10",
+    "name": "Group 6",
+    "topic": "application/8f77ae9d-fcd9-4d0a-ab94-c1b0f2d4c4cd/device/+/event/up",
+    "qos": "0",
+    "datatype": "auto-detect",
+    "broker": "b79a80b523e80429",
+    "nl": false,
+    "rap": true,
+    "rh": 0,
+    "inputs": 0,
+    "x": 200,
+    "y": 820,
+    "wires": [
+      [
+        "074cf9429fcc4f18"
+      ]
+    ]
+  },
+  {
+    "id": "732087965ee34106",
+    "type": "mqtt in",
+    "z": "33e31080ef834a10",
+    "name": "Group 7 (Garson)",
+    "topic": "application/4240e563-c576-499b-b6e9-89b95e3c4236/device/+/event/up",
+    "qos": "0",
+    "datatype": "auto-detect",
+    "broker": "b79a80b523e80429",
+    "nl": false,
+    "rap": true,
+    "rh": 0,
+    "inputs": 0,
+    "x": 200,
+    "y": 900,
+    "wires": [
+      [
+        "074cf9429fcc4f18"
+      ]
+    ]
+  },
+  {
+    "id": "074cf9429fcc4f18",
+    "type": "function",
+    "z": "33e31080ef834a10",
+    "name": "Format for Telegram",
+    "func": "const appGroups = {\n    '53ee255f-1620-4450-9f51-eba79ca3e920': 'Group 1',\n    '8ab36a13-8fba-49b3-8207-6fc4b1bb86fa': 'Group 2',\n    'f35a8798-d184-4995-a658-f9c4938d073d': 'Group 3',\n    '944ee854-89d0-4b0b-9524-f3559ef9df52': 'Group 4',\n    '158daf48-5c45-4c73-88ee-75358c8f5323': 'Group 5',\n    '8f77ae9d-fcd9-4d0a-ab94-c1b0f2d4c4cd': 'Group 6',\n    '4240e563-c576-499b-b6e9-89b95e3c4236': 'Group 7 (Garson)',\n};\n\nconst appId = msg.topic.split('/')[1];\nconst groupName = appGroups[appId] || 'Unknown Group';\n\nconst p = (typeof msg.payload === 'string') ? JSON.parse(msg.payload) : msg.payload;\nconst deviceName = (p.deviceInfo && p.deviceInfo.deviceName) || 'Unknown Device';\nconst obj = p.object || {};\n\nlet readings = '';\nif (obj.Temp_SHT31 !== undefined) readings += '\\u{1F321} Temp: ' + obj.Temp_SHT31 + ' \\u00B0C\\n';\nif (obj.Hum_SHT31  !== undefined) readings += '\\u{1F4A7} Humidity: ' + obj.Hum_SHT31 + ' %\\n';\nfor (const [key, val] of Object.entries(obj)) {\n    if (key !== 'Temp_SHT31' && key !== 'Hum_SHT31') {\n        readings += '\\u{1F4CA} ' + key + ': ' + val + '\\n';\n    }\n}\nif (!readings) readings = JSON.stringify(obj, null, 2);\n\nmsg.payload = {\n    chatId: -5176341473,\n    type: 'message',\n    content: '\\u{1F4E1} ' + groupName + ' \\u2014 ' + deviceName + '\\n' +\n             '\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\n' +\n             readings +\n             '\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\n' +\n             '\\u{1F550} ' + new Date().toISOString()\n};\n\nreturn msg;",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 500,
+    "y": 700,
+    "wires": [
+      [
+        "7af204d73750409e"
+      ]
+    ]
+  }
+]
